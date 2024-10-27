@@ -62,6 +62,7 @@ if silent == "y":
 else:
     while req_passes >= num_passes:
         Bubble_Pass_silent()
+        num_passes = num_passes+1
 
-print("Bubble sort now completed. It took {} passes to complete. See the sorted list below.".format(num_passes))
+print("Bubble sort now completed. It took {} passes to complete. See the sorted list below.".format(num_passes-1))
 print(testlist)
