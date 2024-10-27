@@ -1,14 +1,14 @@
 import random
 # user inputs controlling how long the list is, what the biggest number can be, and if they want every step narrated
-length = int(input("How big so you want your list to be? : "))
+length = int(input("How big do you want your list to be? : "))
 range = int(input("What is the biggest number that can be in your list?: "))
 silent = (input("Do you want each step narrated? y/n: "))
 
 # create an empty list which the users numbers will go into
 testlist = []
-i = 0  # variable that allows list to be appended to, up to 10 times
+i = 0  # variable that allows list to be appended to, up to "range" times
 
-# generates a list with 10 random numbers in
+# generates a list with "range" random numbers in
 while i < length:
     testlist.append(random.randint(1, range))
     i = i + 1
@@ -27,6 +27,8 @@ def Bubble_Pass_silent():
             del testlist[j + 2]
             del testlist[j + 2]
         j = j + 1
+
+
 # Completes one pass of the bubble sort, with narration
 def Bubble_Pass_narrated():
     j = 0
@@ -60,7 +62,6 @@ if silent == "y":
 else:
     while req_passes >= num_passes:
         Bubble_Pass_silent()
-        num_passes = num_passes+1
 
 print("Bubble sort now completed. It took {} passes to complete. See the sorted list below.".format(num_passes))
 print(testlist)
